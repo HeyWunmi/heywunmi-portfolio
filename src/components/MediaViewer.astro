@@ -1,0 +1,30 @@
+<dialog id="media-viewer" aria-labelledby="media-viewer-title"><div class="viewer-toolbar"><h2 id="media-viewer-title">Media viewer</h2><a id="viewer-original" href="#" target="_blank" rel="noopener noreferrer" hidden>Open full-size image ↗</a><button type="button" data-close-viewer aria-label="Close media viewer">Close ×</button></div><div id="media-viewer-content"></div><p id="media-viewer-caption"></p></dialog>
+<script>
+ const dialog=document.querySelector<HTMLDialogElement>('#media-viewer')!;
+ const content=document.querySelector<HTMLDivElement>('#media-viewer-content')!;
+ const caption=document.querySelector<HTMLParagraphElement>('#media-viewer-caption')!;
+ const original=document.querySelector<HTMLAnchorElement>('#viewer-original')!;
+ let trigger: HTMLElement | null=null;
+ document.addEventListener('click',(event)=>{
+  const target=event.target instanceof Element ? event.target.closest<HTMLElement>('[data-lightbox],[data-video]') : null;
+  if(!target) return;
+  event.preventDefault(); trigger=target;
+  const label=target.dataset.caption || target.getAttribute('aria-label') || 'Portfolio evidence';
+  caption.textContent=label;
+  original.hidden=!!target.dataset.video;
+  if(target.dataset.video){
+   const video=document.createElement('video');video.controls=true;video.playsInline=true;video.preload='metadata';video.src=target.dataset.video;video.setAttribute('aria-label',label);
+   if(target.dataset.poster) video.poster=target.dataset.poster;
+   if(target.dataset.captions){const track=document.createElement('track');track.kind='captions';track.label='English';track.srclang='en';track.src=target.dataset.captions;track.default=true;video.append(track);}
+   content.replaceChildren(video);
+  }else{
+   original.href=target.getAttribute('href')!;
+   const img=document.createElement('img');img.src=original.href;img.alt=target.querySelector('img')?.alt || label;content.replaceChildren(img);
+  }
+  dialog.showModal();
+ });
+ const close=()=>dialog.close();
+ dialog.querySelector('[data-close-viewer]')!.addEventListener('click',close);
+ dialog.addEventListener('click',event=>{if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)close();}});
+ dialog.addEventListener('close',()=>{content.querySelector('video')?.pause();content.replaceChildren();trigger?.focus();});
+</script>

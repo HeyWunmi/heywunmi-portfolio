@@ -1,0 +1,53 @@
+# Dependencies and generated output
+/node_modules/
+/dist/
+/dist-launch/
+/.astro/
+/.wrangler/
+/coverage/
+/.cache/
+# Local environment and credentials
+.env
+.env.*
+.npmrc
+.dev.vars
+.dev.vars.*
+*.pem
+*.key
+*.pfx
+*.p12
+credentials*.json
+service-account*.json
+# Private references and historical audit artifacts
+/reference/
+/SECURITY_AUDIT.md
+/security-hardening.patch
+/scripts/*
+!/scripts/build-launch.mjs
+!/scripts/check-security.mjs
+!/scripts/check-routes.mjs
+!/scripts/check-deployment.mjs
+# Local tooling, temporary files and archives
+/.codex/
+/.agents/
+/.aws/
+/.vscode/
+/.idea/
+/tmp/
+/temp/
+*.log
+*.tmp
+*.temp
+*.bak
+*.old
+*.swp
+*.swo
+*.zip
+*.7z
+*.tar
+*.gz
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,8 @@
+---
+import assets from '../data/assets.json';
+interface Props { id: string; alt: string; caption?: string; eager?: boolean }
+const {id,alt,caption,eager=false}=Astro.props;
+const asset=assets.find(item=>item.id===id);
+if(!asset) throw new Error(`Unmapped evidence asset: ${id}`);
+---
+<figure class="evidence-figure"><a href={asset.src} data-lightbox data-caption={caption || alt} aria-label={`Enlarge image: ${alt}`}><img src={asset.src} alt={alt} width={asset.width} height={asset.height} loading={eager?'eager':'lazy'} /><span class="enlarge-label">Enlarge image <span aria-hidden="true">↗</span></span></a>{caption && <figcaption>{caption}</figcaption>}</figure>

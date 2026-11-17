@@ -1,0 +1,10 @@
+---
+interface Props { title: string; href: string }
+const { title, href } = Astro.props;
+---
+<article class="project-card">
+  <p class="eyebrow">Case study placeholder</p>
+  <h3>{title}</h3>
+  <p>Original project content and media will be restored during the rebuild.</p>
+  <a href={href}>View case study <span aria-hidden="true">→</span></a>
+</article>

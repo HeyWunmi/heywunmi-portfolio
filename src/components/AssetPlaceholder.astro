@@ -1,0 +1,9 @@
+---
+interface Props { label: string; portrait?: boolean }
+const { label, portrait = false } = Astro.props;
+---
+<div class:list={['asset-placeholder', { portrait }]} role="img" aria-label={label}>
+  <span>Temporary asset placeholder</span>
+  <strong>{label}</strong>
+  <small>Original asset required. No substitute imagery.</small>
+</div>

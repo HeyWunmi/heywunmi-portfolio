@@ -1,0 +1,4 @@
+---
+import { navigation, site } from '../data/site';
+---
+<header class="site-header"><a class="brand" href="/">Hey<span>Wunmi</span>.</a><nav aria-label="Main navigation">{navigation.map(item=><a href={item.href}>{item.label}</a>)}</nav><a class="button header-cta" href={site.booking} target="_blank" rel="noopener noreferrer">Let's talk <span class="sr-only">(opens in a new tab)</span><span aria-hidden="true">↗</span></a></header>

@@ -1,0 +1,7 @@
+---
+import assets from '../data/assets.json';
+interface Props { file: string; poster: string; title: string; note?: string; captions?: string; playLabel?: string }
+const {file,poster,title,note,captions,playLabel="Watch film"}=Astro.props;
+const asset=assets.find(item=>item.id===poster);
+---
+<figure class="video-preview"><button type="button" data-video={`/videos/${file}.mp4`} data-poster={`/images/${poster}.webp`} data-caption={note || title} data-captions={captions} aria-label={`Open video: ${title}`}><img src={`/images/${poster}.webp`} alt={`${title} video preview`} width={asset?.width} height={asset?.height} loading="lazy" /><span class="video-play"><span aria-hidden="true">▶</span> {playLabel}</span></button>{note && <figcaption>{note}</figcaption>}</figure>
