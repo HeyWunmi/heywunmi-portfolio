@@ -1,6 +1,7 @@
 export const projects = [
   {
     "slug": "novasync-graduation-hub",
+    "seoTitle": "NovaSync Graduation Hub: Certificate Automation",
     "title": "NovaSync Graduation Hub",
     "subtitle": "Automated Graduation & Certificate System",
     "category": "Automation / Operational Web App",
@@ -35,6 +36,7 @@ export const projects = [
   },
   {
     "slug": "ai-mastery-class",
+    "seoTitle": "AI Mastery Class: Enrollment Automation",
     "title": "AI Mastery Class",
     "subtitle": "Course Website & Automated Student Onboarding",
     "category": "Course Enrollment / Payment & Onboarding Automation",
@@ -77,6 +79,7 @@ export const projects = [
   },
   {
     "slug": "passport-potluck",
+    "seoTitle": "Passport Potluck: Event Workflow Automation",
     "title": "The Passport Potluck",
     "subtitle": "Event Assignment & Payment Automation",
     "category": "Event Operations / Workflow Automation",
@@ -122,6 +125,7 @@ export const projects = [
   },
   {
     "slug": "travel-command-center",
+    "seoTitle": "Executive Travel Planning & Coordination",
     "title": "Executive Travel Command Center",
     "subtitle": "32 days. 8 cities. One centralized system.",
     "category": "Executive Operations / Travel System",
