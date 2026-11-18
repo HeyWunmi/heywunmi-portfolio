@@ -1,15 +1,18 @@
 ---
+import StructuredData from '../components/StructuredData.astro';
+import { buildGraph, type ServiceInput, type ProjectInput } from '../lib/structured-data';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MediaViewer from '../components/MediaViewer.astro';
 import '../styles/global.css';
 import '../styles/phase2.css';
-interface Props { title: string; description?: string; noindex?: boolean; exactTitle?: boolean }
-const {title,description='AI-Powered Operations & Automation Specialist. Executive support, workflow automation and practical digital systems.',noindex=false,exactTitle=false}=Astro.props;
+interface Props { title: string; description?: string; noindex?: boolean; exactTitle?: boolean; services?: ServiceInput[]; project?: ProjectInput }
+const {title,description='AI-Powered Operations & Automation Specialist. Executive support, workflow automation and practical digital systems.',noindex=false,exactTitle=false,services,project}=Astro.props;
 const publicLaunch=import.meta.env.PUBLIC_LAUNCH==='true';
 const canonical=new URL(noindex ? "/404.html" : Astro.url.pathname,Astro.site);
 const socialImage=new URL('/images/wunmi-portrait.webp',Astro.site);
 const pageTitle=exactTitle ? title : `${title} | HeyWunmi`;
 const indexable=publicLaunch && !noindex;
+const graph=noindex ? undefined : buildGraph({path:Astro.url.pathname,title:pageTitle,description,services,project});
 ---
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><meta name="description" content={description}/><meta name="robots" content={indexable ? "index, follow" : "noindex, nofollow"}/><link rel="canonical" href={canonical}/><meta property="og:type" content="website"/><meta property="og:site_name" content="HeyWunmi"/><meta property="og:title" content={pageTitle}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={socialImage}/><meta property="og:image:width" content="800"/><meta property="og:image:height" content="800"/><meta property="og:image:alt" content="Janet Oguns, AI-Powered Operations and Automation Specialist"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@virtualwunmi"/><meta name="twitter:title" content={pageTitle}/><meta name="twitter:description" content={description}/><meta name="twitter:image" content={socialImage}/><meta name="theme-color" content="#4b0013"/><title>{pageTitle}</title></head><body><a class="skip-link" href="#main">Skip to content</a><Header/><main id="main" tabindex="-1"><slot/></main><Footer/><MediaViewer/></body></html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><meta name="description" content={description}/><meta name="robots" content={indexable ? "index, follow" : "noindex, nofollow"}/><link rel="canonical" href={canonical}/><meta property="og:type" content="website"/><meta property="og:site_name" content="HeyWunmi"/><meta property="og:title" content={pageTitle}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={socialImage}/><meta property="og:image:width" content="800"/><meta property="og:image:height" content="800"/><meta property="og:image:alt" content="Janet Oguns, AI-Powered Operations and Automation Specialist"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@virtualwunmi"/><meta name="twitter:title" content={pageTitle}/><meta name="twitter:description" content={description}/><meta name="twitter:image" content={socialImage}/><meta name="theme-color" content="#4b0013"/><title>{pageTitle}</title>{graph && <StructuredData graph={graph}/>}</head><body><a class="skip-link" href="#main">Skip to content</a><Header/><main id="main" tabindex="-1"><slot/></main><Footer/><MediaViewer/></body></html>

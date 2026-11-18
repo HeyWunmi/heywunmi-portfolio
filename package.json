@@ -11,7 +11,8 @@
     "test:routes": "node scripts/check-routes.mjs",
     "build:launch": "node scripts/build-launch.mjs",
     "check:deploy": "node scripts/check-deployment.mjs",
-    "test:security": "node scripts/check-security.mjs dist-launch"
+    "test:security": "node scripts/check-security.mjs dist-launch",
+    "test:structured-data": "node --experimental-strip-types scripts/check-structured-data.mjs dist-launch"
   },
   "engines": {
     "node": ">=22.12.0"
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "parse5": "8.1.1",
     "typescript": "^6.0.3",
     "wrangler": "^4.151.1"
   },

@@ -27,6 +27,8 @@ service-account*.json
 !/scripts/check-security.mjs
 !/scripts/check-routes.mjs
 !/scripts/check-deployment.mjs
+!/scripts/structured-data-policy.mjs
+!/scripts/check-structured-data.mjs
 # Local tooling, temporary files and archives
 /.codex/
 /.agents/
