@@ -722,5 +722,28 @@
     "destination": "/#about",
     "privacy": "Owner-supplied introduction approved for portfolio",
     "poster": "meet-wunmi"
+  },
+  {
+    "id": "confession-box",
+    "original": "Screenshot 2026-11-19 082343.png",
+    "src": "/images/confession-box.webp",
+    "type": "image",
+    "project": "confession-box",
+    "destination": "/confession-box/",
+    "purpose": "Owner-approved public-facing homepage screenshot",
+    "privacy": "Public interface only; no submission records or administrator view",
+    "width": 1762,
+    "height": 837
+  },
+  {
+    "id": "confession-box-video",
+    "original": "The Confession Box.mp4",
+    "src": "/videos/confession-box-demo.mp4",
+    "type": "video",
+    "project": "confession-box",
+    "destination": "/confession-box/",
+    "purpose": "Public Interface Walkthrough; optimized delivery copy",
+    "privacy": "Publication approved by the project owner after reviewing the entire source recording and audio; not independently certified by automated privacy review. Owner confirms music or silence only, without meaningful speech.",
+    "poster": "confession-box"
   }
 ]

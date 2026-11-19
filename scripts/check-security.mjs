@@ -21,4 +21,4 @@ async function walk(dir){for(const e of await readdir(dir,{withFileTypes:true}))
  assert(!/<style\b|\sstyle=|\son[a-z]+=|<iframe\b|<form\b/i.test(h),`Unexpected inline code/embed/form: ${p}`);
  for(const match of h.matchAll(/<(script|link|img|a|button)\b[^>]*>/gi)){const t=match[0];const value=t.match(/\b(?:href|src|data-video)="([^"]*)"/)?.[1];if(!value)continue;assert(!/^(javascript|data|vbscript):|^\/\//i.test(value),`Unsafe URL scheme: ${p}`);if(/^https?:/.test(value)){assert(value.startsWith('https:'),`Non-HTTPS link: ${p}`);externals.add(value);}if(/target="_blank"/.test(t))assert(/rel="[^"]*noopener/.test(t)&&/rel="[^"]*noreferrer/.test(t),`New-tab link protection: ${p}`);if(/^<script/.test(t))assert(value.startsWith('/_astro/'),`Unexpected script source: ${p}`);}
 }}
-await walk(root);assert.equal(pages,8);console.log(JSON.stringify({passed:true,pages,externalDestinations:[...externals]},null,2));
+await walk(root);assert.equal(pages,9);console.log(JSON.stringify({passed:true,pages,externalDestinations:[...externals]},null,2));

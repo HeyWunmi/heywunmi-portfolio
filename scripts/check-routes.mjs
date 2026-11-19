@@ -2,7 +2,7 @@ import {readFile,stat,access} from 'node:fs/promises';
 import {resolve,dirname,join} from 'node:path';
 const root=resolve(process.argv[2] || 'dist');
 const launch=process.argv.includes('--launch');
-const routes=['index.html','ai-creative/index.html','executive-operations/index.html','novasync-graduation-hub/index.html','ai-mastery-class/index.html','passport-potluck/index.html','travel-command-center/index.html','404.html'];
+const routes=['index.html','ai-creative/index.html','executive-operations/index.html','novasync-graduation-hub/index.html','ai-mastery-class/index.html','passport-potluck/index.html','travel-command-center/index.html','confession-box/index.html','404.html'];
 const failures=[];
 for(const route of routes){
  const file=join(root,route);await access(file);const html=await readFile(file,'utf8');

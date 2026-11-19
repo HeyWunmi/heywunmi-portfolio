@@ -181,5 +181,49 @@ export const projects = [
     "history": "",
     "relatedLabel": "View executive assistance and operations work samples",
     "relatedHref": "/executive-operations/"
+  },
+  {
+    "slug": "confession-box",
+    "seoTitle": "The Confession Box: Anonymous Submissions & Moderation",
+    "title": "The Confession Box",
+    "subtitle": "Anonymous conversations. Thoughtful moderation. Real participation.",
+    "category": "Workflow Automation / Web Applications / Community Operations",
+    "image": "confession-box",
+    "description": "Explore The Confession Box, an anonymous contribution and moderation platform independently built by Janet Oguns for The Operators' Corner LinkedIn Live series.",
+    "tools": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Cloudflare Workers",
+      "Cloudflare D1",
+      "Cloudflare Turnstile",
+      "Cloudflare Access"
+    ],
+    "live": "https://confession-box.heywunmi.com/",
+    "intro": "An anonymous contribution and moderation platform I independently built for The Operators' Corner, allowing audience members to share experiences and suggest discussion topics while giving administrators a structured way to review contributions before live conversations.",
+    "problem": "People have workplace experiences, questions and opinions they may hesitate to share publicly. For The Operators' Corner, I wanted to make participation easier without putting contributors on the spot. Anonymous submissions also needed moderation: a way to collect contributions, review them privately and select suitable submissions for LinkedIn Live discussions. The challenge was connecting audience participation with live-event operations, rather than managing scattered messages or forms.",
+    "contribution": "I designed and developed The Confession Box as an end-to-end web application. The public interface supports anonymous confessions, episode contributions and suggestions for future topics. A protected administrative area lets authorized administrators review submissions, shortlist contributions and organize what will be discussed during the live event.",
+    "role": "I independently led the project from concept and interface design through backend implementation, workflow development, testing and delivery. Codex and ChatGPT assisted my development process; I owned the product decisions and implementation, with a focus on something the team could use during a real live event.",
+    "workflow": [
+      "Audience submits a confession or topic",
+      "Submission validated and stored",
+      "Authorized administrator reviews",
+      "Suitable contributions shortlisted or queued",
+      "Selected contributions discussed live"
+    ],
+    "logicTitle": "Participation is open. Selection is deliberate.",
+    "logic": "React and TypeScript power the public interface, with Cloudflare Workers processing submissions and Cloudflare D1 storing them for review. Turnstile supports submission verification. Cloudflare Access protects administrator sign-in, and the backend verifies access tokens. Contributions are not automatically approved: an administrator decides what is suitable for discussion. Topic suggestions follow a separate submission path and can inform future conversations.",
+    "callout": "10 anonymous confessions",
+    "calloutLabel": "Received during the first LinkedIn Live event · Owner-reported result",
+    "outcome": "The Confession Box was used during one episode of The Operators' Corner LinkedIn Live and received 10 anonymous confessions during that first event. It supported a real audience participation and moderation workflow, rather than remaining a concept or prototype.",
+    "outcomeNote": "The event outcome was reported by the project owner; it is not an independently audited analytics metric.",
+    "status": "Independent web application · Used during one LinkedIn Live episode",
+    "evidence": [],
+    "video": "confession-box-demo",
+    "videoNote": "Public Interface Walkthrough: homepage, episode contributions, confession form and topic suggestions. This recording shows the public experience, not administrator or backend processing.",
+    "missing": "",
+    "history": "",
+    "relatedLabel": "Explore another event operations workflow",
+    "relatedHref": "/passport-potluck/"
   }
 ];

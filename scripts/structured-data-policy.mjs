@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {parse} from 'parse5';
 export const origin='https://heywunmi.com';
-export const paths=['/','/executive-operations/','/ai-creative/','/novasync-graduation-hub/','/ai-mastery-class/','/passport-potluck/','/travel-command-center/'];
+export const paths=['/','/executive-operations/','/ai-creative/','/novasync-graduation-hub/','/ai-mastery-class/','/passport-potluck/','/travel-command-center/', '/confession-box/'];
 export const attr=(node,name)=>node.attrs?.find(a=>a.name===name)?.value;
 export const text=node=>(node.nodeName==='#text'?node.value:'')+(node.childNodes||[]).map(text).join('');
 export function descendants(node){return [node,...(node.childNodes||[]).flatMap(descendants),...(node.content?descendants(node.content):[])];}

@@ -1,5 +1,5 @@
 export const origin = 'https://heywunmi.com';
-export const publicPaths = ['/', '/executive-operations/', '/ai-creative/', '/novasync-graduation-hub/', '/ai-mastery-class/', '/passport-potluck/', '/travel-command-center/'];
+export const publicPaths = ['/', '/executive-operations/', '/ai-creative/', '/novasync-graduation-hub/', '/ai-mastery-class/', '/passport-potluck/', '/travel-command-center/', '/confession-box/'];
 export const serviceIds = ['executive-assistance', 'executive-operations', 'ai-powered-automation'];
 export interface ServiceInput { name: string; description: string }
 export interface ProjectInput { title: string; description: string }
